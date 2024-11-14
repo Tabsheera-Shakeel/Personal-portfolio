@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from 'react';
 import Image from 'next/image';
 import React from 'react';
@@ -16,21 +16,6 @@ const Frontpage = () => {
 
   return (
     <div className="relative min-h-screen w-full bg-cover bg-center overflow-hidden">
-      <style jsx>{`
-        @keyframes fadeInSlide {
-          0% {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fade-in-slide {
-          animation: fadeInSlide 1.5s ease-in-out forwards;
-        }
-      `}</style>
 
       {/* Navbar */}
       <div className="absolute top-5 left-1/2 transform -translate-x-1/2 w-full p-3 z-20 bg-transparent">
@@ -40,7 +25,7 @@ const Frontpage = () => {
               {['home', 'about', 'skill', 'project', 'contact'].map((section) => (
                 <li key={section} className="group">
                   <Link href={`#${section}`}>
-                    <span className="text-xl transition-colors duration-300 group-hover:text-black group-hover:bg-white p-2 rounded capitalize">
+                    <span className="text-xl text-white transition-colors duration-300 group-hover:text-black group-hover:bg-white p-2 rounded capitalize">
                       {section}
                     </span>
                   </Link>
@@ -56,13 +41,13 @@ const Frontpage = () => {
           <SheetTrigger className="text-white absolute top-4 right-5 z-30 " onClick={() => setIsSheetOpen(true)}>
             <Menu />
           </SheetTrigger>
-          <SheetContent>
+          <SheetContent className="bg-black text-white">
             <SheetHeader>
-              <SheetTitle className="text-black animate-fade-in-slide">Welcome To My Portfolio</SheetTitle>
+              <SheetTitle className="text-white">Welcome To My Portfolio</SheetTitle>
             </SheetHeader>
-            <ul className="mt-10 text-black">
+            <ul className="mt-10 text-white">
               {['home', 'about', 'skill', 'project', 'contact'].map((section) => (
-                <li key={section} className="group animate-fade-in-slide">
+                <li key={section} className="group">
                   <Link href={`#${section}`} onClick={handleLinkClick} className="text-xl transition-colors duration-300 group-hover:text-black group-hover:bg-amber-700 p-2 rounded">
                     {section.charAt(0).toUpperCase() + section.slice(1)}
                   </Link>
@@ -88,20 +73,20 @@ const Frontpage = () => {
             height={360}
             className="absolute top-0 right-0 w-full max-w-[570px]"
           />
-          <div className="p-6 absolute top-[25%] ml-8 animate-fade-in-slide">
-            <h1 className="text-xl mb-2 animate-fade-in-slide">{`Hello, my Name is`}</h1>
-            <h2 className="text-base text-yellow-700 italic animate-fade-in-slide">Tabsheera Shakeel</h2>
-            <p className="mt-2 text-sm animate-fade-in-slide">
+          <div className="p-6 absolute top-[25%] ml-8">
+            <h1 className="text-xl mb-2 animate__slideInBottom">{`Hello, my Name is`}</h1>
+            <h2 className="text-base text-yellow-700 italic animate__slideInBottom">Tabsheera Shakeel</h2>
+            <p className="mt-2 text-sm animate__slideInBottom">
               {`Frontend & Web Developer passionate about creating visually appealing, responsive websites with engaging user
               experiences. As a Personal Branding Specialist, I align designs with audience needs. With UI/UX expertise, I bring ideas to
               life. Currently exploring generative AI to sharpen my skills. Let's create something impactful together!`}
             </p>
-            <div className="mt-4 animate-fade-in-slide">
+            <div className="mt-4">
               <Link href="#projectcard">
                 <button className="bg-gradient-to-r from-yellow-500 to-yellow-700 text-white px-4 py-2 rounded-lg shadow-lg transition duration-300 hover:scale-105">Work</button>
               </Link>
               <Link href="https://www.linkedin.com/in/tabsheera-shakeel-116555300">
-                <button className="bg-gradient-to-r from-yellow-500 to-yellow-700 text-white px-4 py-2 rounded-lg shadow-lg transition duration-300 hover:scale-105 ml-2">LinkedIn</button>
+                <button className="bg-gradient-to-r from-yellow-500 to-yellow-700 text-white px-4 py-2 rounded-lg shadow-lg transition duration-300 hover:scale-105 ml-2 mt-2 md:mt-0">LinkedIn</button>
               </Link>
             </div>
           </div>
@@ -112,7 +97,7 @@ const Frontpage = () => {
           alt="Profile"
           width={370}
           height={300}
-          className="absolute top-[50%] right-12 w-3/4 max-w-[370px] z-10"
+          className="absolute profile-image top-[60%] right-12 w-3/4 max-w-[370px] z-10 sm:right-4 sm:top-[70%] mt-10"
         />
       </div>
 
@@ -124,15 +109,15 @@ const Frontpage = () => {
           <Image src="/Pink Watercolour Flower Shop Logo.png" alt="Logo" width={120} height={30} className="object-contain" />
         </div>
 
-        <div className="absolute ml-20 left-5 top-[30%] p-5 m-5 max-w-lg z-10 animate-fade-in-slide">
-          <h1 className="text-4xl mb-2 animate-fade-in-slide">{`Hello, my Name is`}</h1>
-          <h2 className="text-4xl text-yellow-700 italic animate-fade-in-slide">Tabsheera Shakeel</h2>
-          <p className="mt-2 text-lg animate-fade-in-slide">
+        <div className="absolute ml-20 left-5 top-[30%] p-5 m-5 max-w-lg z-10">
+          <h1 className="text-4xl mb-2 animate__slideInBottom">{`Hello, my Name is`}</h1>
+          <h2 className="text-4xl text-yellow-700 italic animate__slideInBottom">Tabsheera Shakeel</h2>
+          <p className="mt-2 text-lg animate__slideInBottom">
             {`Frontend & Web Developer passionate about creating visually appealing, responsive websites with engaging user
             experiences. As a Personal Branding Specialist, I align designs with audience needs. With UI/UX expertise, I bring ideas to
             life. Currently exploring generative AI to sharpen my skills. Let's create something impactful together!`}
           </p>
-          <div className="mt-10 animate-fade-in-slide">
+          <div className="mt-10">
             <Link href="#projectcard">
               <button className="bg-gradient-to-r from-yellow-500 to-yellow-700 text-white px-4 py-2 rounded-lg shadow-lg transition duration-300 hover:scale-105">Work</button>
             </Link>
